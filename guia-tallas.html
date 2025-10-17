@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Tallas - Young Stars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .size-guide {
+            padding: 120px 0 80px;
+            background: var(--bg-light);
+        }
+        
+        .size-guide-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .size-guide h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .size-guide-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        .size-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .size-category {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .size-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .size-category h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .size-table th,
+        .size-table td {
+            padding: 0.8rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .size-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .size-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+        
+        .size-table tr:hover {
+            background: rgba(255, 107, 107, 0.1);
+        }
+        
+        .size-measurements {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .measurement-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .measurement-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+        
+        .measurement-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .measurement-item p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        .size-tips {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .size-tips h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .tips-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .size-calculator {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select {
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+        
+        .calculate-btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            grid-column: 1 / -1;
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .result {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .result h4 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .back-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .size-guide h1 {
+                font-size: 2rem;
+            }
+            
+            .size-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .size-table {
+                font-size: 0.9rem;
+            }
+            
+            .size-table th,
+            .size-table td {
+                padding: 0.5rem;
+            }
+            
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>YOUNG STARS</h1>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#productos" class="nav-link">Productos</a></li>
+                    <li><a href="index.html#nuevos" class="nav-link">Nuevos</a></li>
+                    <li><a href="index.html#ofertas" class="nav-link">Ofertas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Size Guide Section -->
+    <section class="size-guide">
+        <div class="size-guide-content">
+            <h1>Guía de Tallas</h1>
+            <p class="size-guide-intro">
+                Encuentra la talla perfecta para ti con nuestra guía completa. 
+                Medimos cada prenda para asegurar el mejor ajuste y comodidad.
+            </p>
+
+            <!-- Size Calculator -->
+            <div class="size-calculator">
+                <h3>Calculadora de Tallas</h3>
+                <p>Ingresa tus medidas para obtener la talla recomendada:</p>
+                <form class="calculator-form" id="size-calculator">
+                    <div class="form-group">
+                        <label for="height">Altura (cm)</label>
+                        <input type="number" id="height" placeholder="170" min="140" max="220">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Peso (kg)</label>
+                        <input type="number" id="weight" placeholder="65" min="40" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="chest">Pecho (cm)</label>
+                        <input type="number" id="chest" placeholder="90" min="70" max="130">
+                    </div>
+                    <div class="form-group">
+                        <label for="waist">Cintura (cm)</label>
+                        <input type="number" id="waist" placeholder="75" min="60" max="110">
+                    </div>
+                    <button type="submit" class="calculate-btn">Calcular Talla</button>
+                </form>
+                <div class="result" id="size-result">
+                    <h4>Tu talla recomendada es: <span id="recommended-size"></span></h4>
+                    <p id="size-explanation"></p>
+                </div>
+            </div>
+
+            <!-- Size Categories -->
+            <div class="size-categories">
+                <!-- Tops -->
+                <div class="size-category">
+                    <h3>👕 Tops & Hoodies</h3>
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Pecho (cm)</th>
+                                <th>Largo (cm)</th>
+                                <th>Hombro (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>XS</strong></td>
+                                <td>86-90</td>
+                                <td>65</td>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <td><strong>S</strong></td>
+                                <td>90-94</td>
+                                <td>67</td>
+                                <td>44</td>
+                            </tr>
+                            <tr>
+                                <td><strong>M</strong></td>
+                                <td>94-98</td>
+                                <td>69</td>
+                                <td>46</td>
+                            </tr>
+                            <tr>
+                                <td><strong>L</strong></td>
+                                <td>98-102</td>
+                                <td>71</td>
+                                <td>48</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XL</strong></td>
+                                <td>102-106</td>
+                                <td>73</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Bottoms -->
+                <div class="size-category">
+                    <h3>👖 Pantalones & Shorts</h3>
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Talla</th>
+                                <th>Cintura (cm)</th>
+                                <th>Cadera (cm)</th>
+                                <th>Largo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>XS</strong></td>
+                                <td>70-74</td>
+                                <td>90-94</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td><strong>S</strong></td>
+                                <td>74-78</td>
+                                <td>94-98</td>
+                                <td>102</td>
+                            </tr>
+                            <tr>
+                                <td><strong>M</strong></td>
+                                <td>78-82</td>
+                                <td>98-102</td>
+                                <td>104</td>
+                            </tr>
+                            <tr>
+                                <td><strong>L</strong></td>
+                                <td>82-86</td>
+                                <td>102-106</td>
+                                <td>106</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XL</strong></td>
+                                <td>86-90</td>
+                                <td>106-110</td>
+                                <td>108</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Accessories -->
+                <div class="size-category">
+                    <h3>🧢 Accesorios</h3>
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Talla</th>
+                                <th>Medida (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gorras</td>
+                                <td>Única</td>
+                                <td>56-60</td>
+                            </tr>
+                            <tr>
+                                <td>Bucket Hats</td>
+                                <td>Única</td>
+                                <td>56-60</td>
+                            </tr>
+                            <tr>
+                                <td>Zapatillas</td>
+                                <td>36-45</td>
+                                <td>23-29</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Measurement Guide -->
+            <div class="size-measurements">
+                <h3>📏 Cómo Medirte Correctamente</h3>
+                <div class="measurement-guide">
+                    <div class="measurement-item">
+                        <h4>Pecho</h4>
+                        <p>Mide alrededor de la parte más ancha del pecho, manteniendo la cinta métrica horizontal y sin apretar.</p>
+                    </div>
+                    <div class="measurement-item">
+                        <h4>Cintura</h4>
+                        <p>Mide alrededor de la parte más estrecha de la cintura, generalmente justo encima del ombligo.</p>
+                    </div>
+                    <div class="measurement-item">
+                        <h4>Cadera</h4>
+                        <p>Mide alrededor de la parte más ancha de las caderas, aproximadamente 20cm debajo de la cintura.</p>
+                    </div>
+                    <div class="measurement-item">
+                        <h4>Hombro</h4>
+                        <p>Mide desde el punto donde el hombro se une al brazo hasta el mismo punto del otro lado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Size Tips -->
+            <div class="size-tips">
+                <h3>💡 Consejos para Elegir la Talla Correcta</h3>
+                <ul class="tips-list">
+                    <li>Mide siempre sobre ropa interior o ropa ajustada</li>
+                    <li>Mantén la cinta métrica paralela al suelo</li>
+                    <li>No aprietes la cinta métrica, debe estar cómoda</li>
+                    <li>Si estás entre dos tallas, elige la más grande</li>
+                    <li>Considera el tipo de tela y su elasticidad</li>
+                    <li>Para prendas oversized, puedes elegir una talla menos</li>
+                    <li>Las tallas pueden variar entre diferentes marcas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Size Calculator
+        document.getElementById('size-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const height = parseInt(document.getElementById('height').value);
+            const weight = parseInt(document.getElementById('weight').value);
+            const chest = parseInt(document.getElementById('chest').value);
+            const waist = parseInt(document.getElementById('waist').value);
+            
+            if (!height || !weight || !chest || !waist) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+            
+            let recommendedSize = '';
+            let explanation = '';
+            
+            // Lógica de cálculo basada en medidas
+            if (chest <= 90 && waist <= 74) {
+                recommendedSize = 'XS';
+                explanation = 'Talla extra pequeña - Perfecta para un ajuste ajustado';
+            } else if (chest <= 94 && waist <= 78) {
+                recommendedSize = 'S';
+                explanation = 'Talla pequeña - Ajuste cómodo y moderno';
+            } else if (chest <= 98 && waist <= 82) {
+                recommendedSize = 'M';
+                explanation = 'Talla mediana - El tamaño más popular y versátil';
+            } else if (chest <= 102 && waist <= 86) {
+                recommendedSize = 'L';
+                explanation = 'Talla grande - Ajuste relajado y cómodo';
+            } else {
+                recommendedSize = 'XL';
+                explanation = 'Talla extra grande - Ajuste amplio y confortable';
+            }
+            
+            document.getElementById('recommended-size').textContent = recommendedSize;
+            document.getElementById('size-explanation').textContent = explanation;
+            document.getElementById('size-result').classList.add('show');
+            
+            // Scroll to result
+            document.getElementById('size-result').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

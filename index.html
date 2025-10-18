@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Young Stars - Streetwear & Aesthetic</title>
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Young Stars</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#productos" class="nav-link">Productos</a></li>
+                    <li><a href="#nuevos" class="nav-link">Nuevos</a></li>
+                    <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="cart-btn" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <h1>Young Stars</h1>
+            </div>
+            <h2 class="hero-title">STREETWEAR QUE DEFINE TU ESTILO</h2>
+            <p class="hero-subtitle">Descubre la colección más exclusiva para jóvenes que buscan expresar su personalidad</p>
+            <button class="cta-btn">Explorar Colección</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&crop=center" alt="Young Stars Streetwear Collection" />
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="productos">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals" id="nuevos">
+        <div class="container">
+            <h2 class="section-title">Nuevos Lanzamientos</h2>
+            <div class="products-grid" id="new-products-grid">
+                <!-- Los productos nuevos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas Section -->
+    <section class="offers" id="ofertas">
+        <div class="container">
+            <h2 class="section-title">🔥 Ofertas Especiales</h2>
+            <div class="offers-banner">
+                <div class="offer-text">
+                    <h3>¡Hasta 50% de Descuento!</h3>
+                    <p>No te pierdas nuestras ofertas limitadas en productos seleccionados</p>
+                </div>
+                <div class="offer-timer" id="offer-timer">
+                    <div class="timer-item">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-label">Días</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-label">Horas</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-label">Min</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="seconds">00</span>
+                        <span class="timer-label">Seg</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-grid" id="offers-products-grid">
+                <!-- Los productos en oferta se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>Young Stars nace de la pasión por el streetwear y la moda urbana. Somos una marca que entiende a los jóvenes de 18 a 24 años que buscan expresar su individualidad a través de la ropa.</p>
+                    <p>Nuestro compromiso es ofrecer piezas únicas, de alta calidad y con un diseño que refleje la estética moderna y el espíritu rebelde de nuestra generación.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Productos Únicos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10K+</h3>
+                        <p>Clientes Satisfechos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Soporte al Cliente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Mantente al Día</h2>
+                <p>Suscríbete para recibir las últimas novedades y ofertas exclusivas</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Young Stars</h3>
+                    <p>Tu tienda de streetwear favorita para jóvenes con estilo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#nuevos">Nuevos</a></li>
+                        <li><a href="#ofertas">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="guia-tallas.html">Guía de Tallas</a></li>
+                        <li><a href="envios.html">Envíos</a></li>
+                        <li><a href="devoluciones.html">Devoluciones</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> info@youngstars.com</p>
+                    <p><i class="fas fa-phone"></i> +57 (1) 234-5678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 123 #45-67, Bogotá, Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Young Stars. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Los items del carrito se mostrarán aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <h4>Total: $<span id="cart-total">0</span></h4>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoluciones - Young Stars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .returns-page {
+            padding: 120px 0 80px;
+            background: var(--bg-light);
+        }
+        
+        .returns-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .returns-page h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .returns-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        .return-policy {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .policy-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .policy-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .policy-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .policy-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .return-process {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient);
+            z-index: 1;
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .step-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .return-form {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .conditions {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .conditions h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .conditions-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .conditions-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .conditions-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .conditions-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--secondary-color);
+        }
+        
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .contact-support {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-support h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .back-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .returns-page h1 {
+                font-size: 2rem;
+            }
+            
+            .policy-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>YOUNG STARS</h1>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#productos" class="nav-link">Productos</a></li>
+                    <li><a href="index.html#nuevos" class="nav-link">Nuevos</a></li>
+                    <li><a href="index.html#ofertas" class="nav-link">Ofertas</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Returns Page -->
+    <section class="returns-page">
+        <div class="returns-content">
+            <h1>🔄 Devoluciones y Cambios</h1>
+            <p class="returns-intro">
+                Queremos que estés 100% satisfecho con tu compra. 
+                Por eso ofrecemos una política de devoluciones flexible y sin complicaciones.
+            </p>
+
+            <!-- Policy Highlights -->
+            <div class="policy-highlights">
+                <div class="policy-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>30 Días</h3>
+                    <p>Tienes 30 días para devolver cualquier producto desde la fecha de entrega</p>
+                </div>
+                <div class="policy-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Envío Gratuito</h3>
+                    <p>El envío de devolución es completamente gratuito para ti</p>
+                </div>
+                <div class="policy-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Fácil Proceso</h3>
+                    <p>Proceso de devolución simple y rápido en pocos pasos</p>
+                </div>
+                <div class="policy-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Reembolso Completo</h3>
+                    <p>Reembolso completo del importe en 3-5 días laborables</p>
+                </div>
+            </div>
+
+            <!-- Return Process -->
+            <div class="return-process">
+                <h3>📋 Cómo Devolver un Producto</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Solicitar Devolución</h4>
+                            <p>Completa el formulario de devolución con los datos de tu pedido</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Recibir Etiqueta</h4>
+                            <p>Te enviaremos una etiqueta de envío gratuita por email</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Empaquetar</h4>
+                            <p>Empaqueta el producto en su embalaje original y pega la etiqueta</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Enviar</h4>
+                            <p>Deposita el paquete en cualquier oficina de correos</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Reembolso</h4>
+                            <p>Recibe tu reembolso en 3-5 días laborables</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Form -->
+            <div class="return-form">
+                <h3>📝 Solicitar Devolución</h3>
+                <form id="return-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="order-number">Número de Pedido *</label>
+                            <input type="text" id="order-number" placeholder="Ej: YS2024001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Producto a Devolver *</label>
+                            <select id="product" required>
+                                <option value="">Selecciona un producto</option>
+                                <option value="hoodie-black">Hoodie Oversized Black</option>
+                                <option value="cargo-camo">Cargo Pants Camo</option>
+                                <option value="crop-top">Crop Top Aesthetic</option>
+                                <option value="sneakers-white">Sneakers White</option>
+                                <option value="bucket-hat">Bucket Hat Neon</option>
+                                <option value="windbreaker">Windbreaker Tech</option>
+                                <option value="biker-shorts">Biker Shorts Black</option>
+                                <option value="dad-cap">Dad Cap Vintage</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Motivo de Devolución *</label>
+                            <select id="reason" required>
+                                <option value="">Selecciona un motivo</option>
+                                <option value="talla-incorrecta">Talla incorrecta</option>
+                                <option value="no-me-gusta">No me gusta</option>
+                                <option value="defecto">Producto defectuoso</option>
+                                <option value="diferente-descripcion">Diferente a la descripción</option>
+                                <option value="otro">Otro motivo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="size">Talla del Producto</label>
+                            <select id="size">
+                                <option value="">Selecciona talla</option>
+                                <option value="xs">XS</option>
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="condition">Estado del Producto *</label>
+                            <select id="condition" required>
+                                <option value="">Selecciona estado</option>
+                                <option value="nuevo">Nuevo con etiquetas</option>
+                                <option value="usado-excelente">Usado en excelente estado</option>
+                                <option value="usado-bueno">Usado en buen estado</option>
+                                <option value="defectuoso">Defectuoso</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Comentarios Adicionales</label>
+                        <textarea id="comments" placeholder="Cuéntanos más detalles sobre tu devolución..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Solicitar Devolución</button>
+                </form>
+            </div>
+
+            <!-- Conditions -->
+            <div class="conditions">
+                <h3>📋 Condiciones de Devolución</h3>
+                <ul class="conditions-list">
+                    <li>Los productos deben estar en su estado original con etiquetas</li>
+                    <li>No se aceptan devoluciones de productos personalizados o con monogramas</li>
+                    <li>Los productos de higiene personal no son elegibles para devolución</li>
+                    <li>El reembolso se procesará en el método de pago original</li>
+                    <li>Los productos defectuosos se reemplazarán o reembolsarán sin costo adicional</li>
+                    <li>Las devoluciones parciales están permitidas (devolver solo algunos productos del pedido)</li>
+                    <li>El tiempo de procesamiento del reembolso es de 3-5 días laborables</li>
+                    <li>Los gastos de envío originales no son reembolsables (excepto en productos defectuosos)</li>
+                </ul>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h3>❓ Preguntas Frecuentes sobre Devoluciones</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Cuánto tiempo tengo para devolver un producto?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Tienes 30 días desde la fecha de entrega para solicitar una devolución. Después de este período, no podremos procesar la devolución.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Cuánto cuesta devolver un producto?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Las devoluciones son completamente gratuitas. Te proporcionamos una etiqueta de envío prepagada que puedes usar en cualquier oficina de correos.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Cuándo recibiré mi reembolso?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Una vez que recibamos el producto devuelto, procesaremos el reembolso en 3-5 días laborables. El dinero aparecerá en tu cuenta bancaria en 2-3 días adicionales.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Puedo cambiar un producto por otro?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, puedes devolver un producto y comprar otro. El proceso es el mismo: devuelves el producto original y realizas una nueva compra con el reembolso.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Qué pasa si el producto llega dañado?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Si el producto llega dañado, contacta inmediatamente con nuestro servicio al cliente. Te enviaremos un reemplazo gratuito o procesaremos un reembolso completo.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Puedo devolver productos en oferta?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, todos nuestros productos, incluyendo los de oferta, están cubiertos por nuestra política de devolución de 30 días.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="contact-support">
+                <h3>¿Necesitas Ayuda?</h3>
+                <p>Nuestro equipo de atención al cliente está aquí para ayudarte con cualquier pregunta sobre devoluciones.</p>
+                <div class="contact-methods">
+                    <a href="mailto:devoluciones@youngstars.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        devoluciones@youngstars.com
+                    </a>
+                    <a href="tel:+5712345678" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        +57 (1) 234-5678
+                    </a>
+                    <a href="#" class="contact-method">
+                        <i class="fas fa-comments"></i>
+                        Chat en Vivo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            answer.classList.toggle('show');
+            icon.classList.toggle('rotated');
+        }
+
+        // Return Form
+        document.getElementById('return-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const orderNumber = document.getElementById('order-number').value;
+            const email = document.getElementById('email').value;
+            const product = document.getElementById('product').value;
+            const reason = document.getElementById('reason').value;
+            const condition = document.getElementById('condition').value;
+            
+            if (!orderNumber || !email || !product || !reason || !condition) {
+                alert('Por favor, completa todos los campos obligatorios');
+                return;
+            }
+            
+            // Simular envío de solicitud
+            alert(`¡Solicitud de devolución enviada!\n\nNúmero de pedido: ${orderNumber}\nEmail: ${email}\nProducto: ${product}\nMotivo: ${reason}\n\nTe enviaremos la etiqueta de envío gratuita por email en las próximas 2 horas.`);
+            
+            // Limpiar formulario
+            this.reset();
+        });
+
+        // Smooth scrolling for FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                setTimeout(() => {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            });
+        });
+
+        // Form validation
+        document.querySelectorAll('input[required], select[required]').forEach(field => {
+            field.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.style.borderColor = '#ff6b6b';
+                } else {
+                    this.style.borderColor = '#4ecdc4';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
